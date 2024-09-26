@@ -1,7 +1,10 @@
+const fs = require("fs");
+
 const listaIA = [
   {
     nombre: "Google AI",
-    descripcion: "Conjunto de herramientas y servicios de IA de Google, que incluyen TensorFlow, PyTorch y AutoML.",
+    descripcion:
+      "Conjunto de herramientas y servicios de IA de Google, que incluyen TensorFlow, PyTorch y AutoML.",
     enlace: "https://ai.google/",
   },
   {
@@ -24,14 +27,16 @@ const listaIA = [
   },
   {
     nombre: "OpenAI",
-    descripcion: "Laboratorio de investigación sin fines de lucro que desarrolla tecnologías de IA de código abierto.",
+    descripcion:
+      "Laboratorio de investigación sin fines de lucro que desarrolla tecnologías de IA de código abierto.",
     enlace: "https://openai.com/",
   },
   {
     nombre: "Salesforce Einstein",
     descripcion:
       "Plataforma de IA integrada en Salesforce CRM que ofrece análisis predictivo, automatización de tareas y chatbots.",
-    enlace: "https://www.salesforce.com/news/press-releases/2023/09/12/salesforce-platform-news-dreamforce/",
+    enlace:
+      "https://www.salesforce.com/news/press-releases/2023/09/12/salesforce-platform-news-dreamforce/",
   },
   {
     nombre: "DeepMind",
@@ -47,7 +52,8 @@ const listaIA = [
   },
   {
     nombre: "KoruAI",
-    descripcion: "Plataforma de IA conversacional que permite a las empresas crear chatbots y asistentes virtuales.",
+    descripcion:
+      "Plataforma de IA conversacional que permite a las empresas crear chatbots y asistentes virtuales.",
     enlace: "http://koruai.com/",
   },
   {
@@ -57,3 +63,16 @@ const listaIA = [
     enlace: "https://indicodata.ai/",
   },
 ];
+
+const jsonData = JSON.stringify(listaIA);
+//console.log(jsonData);
+
+fs.writeFile("listaIA.json", jsonData,(err)=>{
+  if(err){
+    console.error("Error el archivo: ",err);
+  }
+  else{
+    console.log("Archivo creado con Exito!!!");
+  }
+});
+
